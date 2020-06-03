@@ -16,7 +16,7 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: AlertVariant;
 }
 
-export default class Alert extends React.Component<AlertProps> {
+export class Alert extends React.Component<AlertProps> {
   private buttonRef = React.createRef<HTMLButtonElement>();
 
   static defaultProps = {
