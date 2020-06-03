@@ -2,18 +2,21 @@ const babel = require('@rollup/plugin-babel').default;
 const commonJS = require('@rollup/plugin-commonjs');
 const external = require('rollup-plugin-auto-external');
 const resolve = require('@rollup/plugin-node-resolve').default;
+const path = require('path');
 const pkg = require('./package.json');
 
 module.exports = {
   input: 'src/index.ts',
   output: [
     {
-      file: pkg.main,
+      dir: path.dirname(pkg.main),
       format: 'cjs',
+      sourcemap: 'inline',
     },
     {
-      file: pkg.module,
+      dir: path.dirname(pkg.module),
       format: 'es',
+      sourcemap: true,
     },
   ],
   plugins: [
