@@ -8,6 +8,7 @@ This demo builds a basic [TypeScript](https://reactjs.org) [React](https://react
 * [`@rollup/plugin-babel`](https://github.com/rollup/plugins/tree/master/packages/babel): Transpile modules with [babel](https://babeljs.io)
   * `@babel/preset-typescript`: strip TypeScript types
   * `@babel/plugin-transform-runtime`: use `@babel/runtime`
+* `external` in `rollup.config.js`: ensures the project's `peerDependencies` aren't included in the built files
 
 ## Building
 
@@ -29,4 +30,15 @@ This demo builds a basic [TypeScript](https://reactjs.org) [React](https://react
     ```shell
     $ yarn build
     # ...
+    ```
+
+    This produces CommonJS and ES Modules builds:
+
+    ```shell
+    $ tree dist
+    dist
+    ├── cjs
+    │   └── index.js
+    └── esm
+        └── index.js
     ```
