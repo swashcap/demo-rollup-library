@@ -1,10 +1,10 @@
 const babel = require('@rollup/plugin-babel').default;
 const commonJS = require('@rollup/plugin-commonjs');
+const external = require('rollup-plugin-auto-external');
 const resolve = require('@rollup/plugin-node-resolve').default;
 const pkg = require('./package.json');
 
 module.exports = {
-  external: Object.keys(pkg.peerDependencies),
   input: 'src/index.ts',
   output: [
     {
@@ -17,6 +17,7 @@ module.exports = {
     },
   ],
   plugins: [
+    external(),
     resolve({
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),

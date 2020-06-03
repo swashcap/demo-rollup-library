@@ -16,7 +16,6 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
-    "@babel/runtime": "^7.10.2",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@rollup/plugin-babel": "^5.0.2",
@@ -31,10 +30,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.12.1",
+    "rollup-plugin-auto-external": "^2.0.0",
     "typescript": "^3.9.3"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.10.2"
+  },
   "peerDependencies": {
-    "@babel/runtime": "^7.10.2",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
