@@ -4,6 +4,7 @@ const resolve = require('@rollup/plugin-node-resolve').default;
 const pkg = require('./package.json');
 
 module.exports = {
+  external: Object.keys(pkg.peerDependencies),
   input: 'src/index.ts',
   output: [
     {
